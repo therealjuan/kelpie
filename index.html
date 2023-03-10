@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Fri Mar 10 2023 08:33:31 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Fri Mar 10 2023 09:00:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="63f70dc4cf0bd222733df8c0" data-wf-site="63f70dc4cf0bd2bb373df8bf">
 <head>
   <meta charset="utf-8">
@@ -210,11 +210,11 @@
               <h2 class="heading-preset">Preset 1: Nouvelle</h2>
               <div class="paragraph inter">Photorealistic style in bright, bold colors. Energy and vibrancy. Colorful clothing, hairstyles... <br></div>
             </div>
-            <div id="w-node-_98c2f62a-7d11-7bc9-7957-92fc1c66b135-733df8c0" class="preset-image-block preset-1-1"></div>
+            <div id="w-node-_98c2f62a-7d11-7bc9-7957-92fc1c66b135-733df8c0" class="preset-image-block preset-1-1 square"></div>
             <div id="w-node-_2e950017-ff7e-7676-0078-94664c87e4a9-733df8c0" class="preset-image-block circle preset-1-2"></div>
-            <div id="w-node-_5ba2564b-26cc-4e59-5fb2-80b9911b7de7-733df8c0" class="preset-image-block preset-1-3"></div>
-            <div id="w-node-_5e164a33-f5c8-ab99-a408-84f2a825333e-733df8c0" class="preset-image-block circle preset-1-4"></div>
-            <div id="w-node-_070ec45c-bfca-e8dd-38bb-205e980773a0-733df8c0" class="preset-image-block"></div>
+            <div id="w-node-_5ba2564b-26cc-4e59-5fb2-80b9911b7de7-733df8c0" class="preset-image-block preset-1-3 square"></div>
+            <div id="w-node-_5e164a33-f5c8-ab99-a408-84f2a825333e-733df8c0" class="preset-image-block circle preset-1-4 square"></div>
+            <div id="w-node-_070ec45c-bfca-e8dd-38bb-205e980773a0-733df8c0" class="preset-image-block square preset-1-5"></div>
           </div>
           <div class="flex left">
             <div class="text">
@@ -241,8 +241,8 @@
             </div>
             <div id="w-node-a4866a1e-befc-9077-f20d-8a5fec54efcc-733df8c0" class="preset-image-block preset-2-2"></div>
             <div id="w-node-a4866a1e-befc-9077-f20d-8a5fec54efcd-733df8c0" class="preset-image-block circle preset-2-3"></div>
-            <div id="w-node-a4866a1e-befc-9077-f20d-8a5fec54efd0-733df8c0" class="preset-image-block preset-2-1"></div>
-            <div id="w-node-_3b063c6e-d0bf-6bb2-e161-610948a5191b-733df8c0" class="preset-image-block preset-2-4"></div>
+            <div id="w-node-a4866a1e-befc-9077-f20d-8a5fec54efd0-733df8c0" class="preset-image-block preset-2-1 square"></div>
+            <div id="w-node-_3b063c6e-d0bf-6bb2-e161-610948a5191b-733df8c0" class="preset-image-block preset-2-4 square"></div>
           </div>
           <div class="flex left">
             <div class="text">
@@ -269,9 +269,9 @@
             </div>
             <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42a8-733df8c0" class="preset-image-block preset-3-1"></div>
             <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42a9-733df8c0" class="preset-image-block circle preset-3-2"></div>
-            <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42ac-733df8c0" class="preset-image-block preset-3-3"></div>
+            <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42ac-733df8c0" class="preset-image-block preset-3-3 square"></div>
             <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42ab-733df8c0" class="preset-image-block circle preset-3-5"></div>
-            <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42aa-733df8c0" class="preset-image-block preset-3-2"></div>
+            <div id="w-node-_8d3427f1-818a-3f08-99e9-23d8b40f42aa-733df8c0" class="preset-image-block preset-3-2 square"></div>
           </div>
           <div class="flex left">
             <div class="text">
@@ -348,9 +348,19 @@
 const numAnim = new countUp.CountUp("count", 23);
 numAnim.start();
 function gridAspectRatio() {
-  Array.from(document.getElementsByClassName("circle")).forEach( (element) => {
+  Array.from(document.getElementsByClassName("circle")).forEach( (element, index) => {
     element.style.height = element.offsetWidth + "px";
   });
+  let viewportWidth = window.innerWidth;
+  if ( viewportWidth <= 991 ) {
+    Array.from(document.getElementsByClassName("square")).forEach( (element, index) => {
+      element.style.height = element.offsetWidth + "px";
+    });  
+  } else {
+    Array.from(document.getElementsByClassName("square")).forEach( (element, index) => {
+      element.style.height = "auto";
+    });  
+  }
 }
 window.onresize = gridAspectRatio;
 gridAspectRatio();

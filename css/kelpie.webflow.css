@@ -886,6 +886,8 @@ a {
   background-image: url('../images/preset3-1.png');
   background-position: 50% 50%;
   background-size: 120%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .preset-image-block.preset-3-3 {
@@ -900,6 +902,11 @@ a {
 
 .preset-image-block.preset-3-2 {
   background-image: url('../images/preset3-3.png');
+}
+
+.preset-image-block.square.preset-1-5 {
+  background-image: url('../images/preset-1-5.png');
+  background-size: cover;
 }
 
 .heading-preset {
@@ -1258,6 +1265,20 @@ a {
   .logo.v2.mobile {
     display: block;
     width: 60%;
+  }
+
+  .preset-image-block.preset-2-2 {
+    background-size: cover;
+  }
+
+  .preset-image-block.preset-3-1 {
+    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .preset-image-block.square {
+    background-size: cover;
   }
 
   .heading-preset {
