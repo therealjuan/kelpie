@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Fri Mar 10 2023 09:03:24 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Fri Mar 10 2023 10:34:04 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="63f70dc4cf0bd222733df8c0" data-wf-site="63f70dc4cf0bd2bb373df8bf">
 <head>
   <meta charset="utf-8">
@@ -35,7 +35,7 @@
   </div>
   <div class="full-page alternative">
     <div class="page-wrapper">
-      <div class="grid hero-intro v2">
+      <div id="hero-element" class="grid hero-intro v2">
         <div id="w-node-_0985e2d3-f635-d9e1-5c67-b20c253d4c12-733df8c0" class="image">
           <div class="video">
             <div data-poster-url="videos/kelpie-video-pool_3mbps-poster-00001.jpg" data-video-urls="videos/kelpie-video-pool_3mbps-transcode.mp4,videos/kelpie-video-pool_3mbps-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video w-background-video w-background-video-atom"><video id="6cb32894-6e58-6393-69c6-ffcfedbf5244-video" autoplay="" loop="" style="background-image:url(&quot;videos/kelpie-video-pool_3mbps-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
@@ -56,13 +56,13 @@
         </div>
       </div>
       <div class="nav alternative">
-        <div class="nav-bg">
+        <div id="header" class="nav-bg">
           <a href="#" class="logo v2 w-inline-block"><img src="images/Kelpie-AI_-Memory-Maven.svg" loading="lazy" data-w-id="e116ade0-6f7a-2f0b-129b-ced95dd794f7" alt="" class="image-2"></a>
           <a href="#" class="logo v2 mobile w-inline-block">
             <h2 class="logo-mobile">Kelpie AI:<br>Memory Maven</h2>
           </a>
           <div class="div-block-2">
-            <a data-w-id="f3ee573e-8eb5-80f5-711b-cb2c84f054bb" href="https://xu8gmcljyss.typeform.com/to/pa53z0r7" target="_blank" class="button">Join Waitlist</a>
+            <a data-w-id="f3ee573e-8eb5-80f5-711b-cb2c84f054bb" href="https://xu8gmcljyss.typeform.com/to/pa53z0r7" target="_blank" class="button small">Join Waitlist</a>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
             <p class="paragraph inter">Whether you&#x27;re looking to create a digital scrapbook or simply revisit your favorite moments, our AI-powered platform makes it easy and enjoyable.</p>
           </div>
         </div>
-        <div id="w-node-_3b6a7d27-5b8a-c980-2a11-d54abf89b9bb-733df8c0" class="block full"><img src="images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693.jpeg" loading="lazy" sizes="(max-width: 479px) 5vw, (max-width: 991px) 7vw, 8vw" srcset="images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693-p-500.jpeg 500w, images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693-p-800.jpeg 800w, images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693.jpeg 1038w" alt="">
+        <div id="w-node-_3b6a7d27-5b8a-c980-2a11-d54abf89b9bb-733df8c0" class="block full"><img src="images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693.jpeg" loading="lazy" sizes="(max-width: 479px) 6vw, (max-width: 991px) 7vw, 8vw" srcset="images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693-p-500.jpeg 500w, images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693-p-800.jpeg 800w, images/jacques-henri-lartigue-life-in-color-exibart-street-photography-00-1038x693.jpeg 1038w" alt="">
           <div class="video reading">
             <div data-poster-url="videos/kelpie-video-reading_3mbps-poster-00001.jpg" data-video-urls="videos/kelpie-video-reading_3mbps-transcode.mp4,videos/kelpie-video-reading_3mbps-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video w-background-video w-background-video-atom"><video id="3b6a7d27-5b8a-c980-2a11-d54abf89b9be-video" autoplay="" loop="" style="background-image:url(&quot;videos/kelpie-video-reading_3mbps-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
                 <source src="videos/kelpie-video-reading_3mbps-transcode.mp4" data-wf-ignore="true">
@@ -358,6 +358,12 @@ function gridAspectRatio() {
     else 
       element.style.height = "auto";
   }); 
+	if ( viewportWidth <= 991 ) { 
+		// fix header
+	  document.getElementById("hero-element").style.height = window.innerHeight - document.getElementById("header").offsetHeight + "px"
+  } else {
+  	document.getElementById("hero-element").style.height = "86vh";
+  }
 }
 window.onresize = gridAspectRatio;
 gridAspectRatio();

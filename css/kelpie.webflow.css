@@ -118,7 +118,7 @@ a {
 }
 
 .grid.hero-intro.v2 {
-  height: 85vh;
+  height: 86vh;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
   border-bottom-color: #a07630;
@@ -990,6 +990,10 @@ a {
     background-color: #fafafa;
   }
 
+  .nav.alternative {
+    background-color: transparent;
+  }
+
   .nav-bg {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1311,8 +1315,26 @@ a {
     padding-left: 1.5em;
   }
 
+  .grid.hero-intro.v2 {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .image {
+    min-height: 50vh;
+  }
+
+  .block {
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+
   .fix-height.left-line.sign-up {
     width: 100%;
+  }
+
+  .text.no-caps.inter {
+    font-size: 1em;
   }
 
   .text.no-caps.inter.hide {
@@ -1320,11 +1342,20 @@ a {
   }
 
   .paragraph.inter {
-    font-size: 1.125em;
+    font-size: 1em;
   }
 
   .xl {
-    font-size: 2.5em;
+    font-size: 2em;
+  }
+
+  .b-marg {
+    margin-bottom: 0.25em;
+    font-size: 1em;
+  }
+
+  .h3-lrg {
+    font-size: 2em;
   }
 
   .text-wrapper.last {
@@ -1335,16 +1366,35 @@ a {
     flex-direction: column;
   }
 
+  .heading-2.ivydisplay {
+    font-size: 2em;
+  }
+
   .heading-3.ivydisplay {
-    font-size: 2.25em;
+    font-size: 2em;
+  }
+
+  .heading-4 {
+    font-size: 2em;
+  }
+
+  .heading-4.white {
+    font-size: 2em;
   }
 
   .logo.v2.mobile {
-    width: 45%;
+    width: 49%;
+  }
+
+  .button.small {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem 1.25rem;
+    font-weight: 400;
   }
 
   .heading-preset {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .body {
@@ -1359,7 +1409,9 @@ a {
   }
 
   .logo-mobile {
-    font-size: 1.2em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1em;
   }
 }
 
